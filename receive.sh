@@ -30,8 +30,11 @@ echo "[2/3] Decrypting file..."
 age -d -i "$PRIVATE_KEY" -o "$DECRYPTED" "$ENCRYPTED"
 if [ $? -ne 0 ]; then
     echo "ERROR: Decryption failed! Wrong key or corrupted file."
+    TIMESTAMP=$(date +"%Y-%m-%dT%H:%M:%S")
+    echo "$TIMESTAMP | bob | alice | $1 | FAILED (decryption error)" >> "$LOG"
     exit 1
 fi
+
 echo "File decrypted: $DECRYPTED"
 
 # Step 3 - Verify checksum
