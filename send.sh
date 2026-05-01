@@ -44,7 +44,7 @@ echo "Encrypted file created: $ENCRYPTED"
 
 # Step 4 - Send to Bob's folder
 echo "[4/4] Sending to Bob..."
-cp "$ENCRYPTED" bob/
+scp -i alice/alice-ssh-key -o StrictHostKeyChecking=no "$ENCRYPTED" ssuk04@localhost:/home/ssuk04/secure-share/bob/
 if [ $? -ne 0 ]; then
     echo "ERROR: Transfer failed!"
     echo "$TIMESTAMP | alice | bob | $1 | sha256:$CHECKSUM | FAILED (transfer)" >> "$LOG"
