@@ -3,3 +3,5 @@ bob/notes.txt
 alice/bob-public.txt
 *.age
 transfer.log
+alice/alice-ssh-key
+alice/alice-ssh-key.pub
