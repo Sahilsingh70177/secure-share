@@ -37,7 +37,7 @@ echo "[3/4] Encrypting file..."
 age -r "$(cat $PUBLIC_KEY)" -o "$ENCRYPTED" "$FILE"
 if [ $? -ne 0 ]; then
     echo "ERROR: Encryption failed!"
-    echo "$TIMESTAMP | alice | bob | $1 | sha256:$CHECKSUM | FAILED (encryption)" >> "$LOG"
+    echo "$TIMESTAMP | alice | ssuk04@localhost | $1 | sha256:$CHECKSUM | FAILED (encryption)" >> "$LOG"
     exit 1
 fi
 echo "Encrypted file created: $ENCRYPTED"
@@ -47,13 +47,13 @@ echo "[4/4] Sending to Bob..."
 scp -i alice/alice-ssh-key -o StrictHostKeyChecking=no "$ENCRYPTED" ssuk04@localhost:/home/ssuk04/secure-share/bob/
 if [ $? -ne 0 ]; then
     echo "ERROR: Transfer failed!"
-    echo "$TIMESTAMP | alice | bob | $1 | sha256:$CHECKSUM | FAILED (transfer)" >> "$LOG"
+    echo "$TIMESTAMP | alice | ssuk04@localhost | $1 | sha256:$CHECKSUM | FAILED (transfer)" >> "$LOG"
     exit 1
 fi
 echo "File sent to Bob successfully!"
 
 # Log the success
-echo "$TIMESTAMP | alice | bob | $1 | sha256:$CHECKSUM | SUCCESS" >> "$LOG"
+echo "$TIMESTAMP | alice | ssuk04@localhost | $1 | sha256:$CHECKSUM | SUCCESS" >> "$LOG"
 
 echo ""
 echo "=== Transfer Complete ==="
