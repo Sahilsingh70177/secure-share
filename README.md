@@ -1,15 +1,15 @@
--Secure File Sharing Tool
+Secure File Sharing Tool
 
 This tool was built for a small non-profit organisation where field researchers
 need to share sensitive documents ,witness statements, photos, location notes ,
 without risking interception or tampering.
 
 It runs entirely on the command line using tools that are already available on
-any Linux system: age, ssh, and bash.
+any Linux system: age, ssh, and bash. For best and efficent output use WSL
 
 
 
-- The Problem it Solves
+ The Problem it Solves
 
 Sending files over email or USB is risky. Files can be:
 - Read by the wrong person (confidentiality risk)
@@ -20,26 +20,26 @@ This tool fixes all three.
 
 
 
--How it Works
+How it Works
 
 1. Alice has a file she needs to send to Bob
-2. She encrypts it using Bob's public key — only Bob can open it
-3. She generates a checksum — a fingerprint of the file
+2. She encrypts it using Bob's public key , only Bob can open it
+3. She generates a checksum , a fingerprint of the file
 4. She sends the encrypted file to Bob
 5. Bob decrypts it using his private key
-6. Bob verifies the checksum — confirms nothing was changed
+6. Bob verifies the checksum ,confirms nothing was changed
 7. Everything gets logged automatically
 
 
 
--What You Need
+What You Need
 
 - Linux or WSL (Ubuntu)
 - age installed (age --version to check)
 - ssh and scp available
 - bash (already there on any Linux system)
 
-- Folder Structure
+The Folder Structure
 
 secure-share/
 ├── setup_keys.sh     - run this first
@@ -55,7 +55,7 @@ secure-share/
 
 
 
--Setting Up
+Setting Up
 
 First time only — run the setup script:
 
@@ -71,7 +71,7 @@ This will:
 
 
 
--Sending a File
+Sending a File
 
 Put your file inside the alice/ folder, then run:
 
@@ -87,7 +87,7 @@ What happens behind the scenes:
 
 
 
--Receiving a File
+Receiving a File
 
 Bob runs this to decrypt and verify:
 
@@ -102,7 +102,7 @@ What happens behind the scenes:
 
 
 
--The Log File
+The Log File
 
 Every transfer is recorded in transfer.log like this:
 
@@ -113,7 +113,7 @@ This gives you a clear record of who sent what, when, and whether it succeeded.
 
 
 
--Important Security Rules
+Important Security Rules
 
 - Never share your private key with anyone
 - Never transfer unencrypted files
@@ -122,7 +122,7 @@ This gives you a clear record of who sent what, when, and whether it succeeded.
 
 
 
-- Testing
+  Testing
 
 To test the full flow:
 

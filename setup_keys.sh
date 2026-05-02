@@ -3,7 +3,7 @@
 # setup_keys.sh
 # This script sets up age keys for Bob (recipient)
 
-echo "=== Secure Share Setup ==="
+echo "Secure Share Setup "
 
 # Step 1 - Create folders if they don't exist
 echo "[1/3] Creating folders..."
@@ -22,6 +22,6 @@ echo "[3/3] Copying Bob's public key to Alice..."
 grep "public key" bob/bob-key.txt | awk '{print $4}' > alice/bob-public.txt
 
 echo ""
-echo "=== Setup Complete ==="
+echo "Setup Complete "
 echo "Bob's public key:"
 cat alice/bob-public.txt
