@@ -3,7 +3,7 @@
 # receive.sh
 # Bob uses this to decrypt and verify a received file
 
-echo "=== Secure File Receive ==="
+echo "Secure file receiving start"
 
 # Check if user gave a filename
 if [ -z "$1" ]; then
@@ -48,12 +48,12 @@ echo "Original checksum:      $ORIGINAL_CHECKSUM"
 
 if [ "$RECEIVED_CHECKSUM" = "$ORIGINAL_CHECKSUM" ]; then
     echo ""
-    echo "✅ SUCCESS: File is verified! Checksums match."
+    echo " SUCCESS: File is verified! Checksums match."
 else
     echo ""
-    echo "❌ ERROR: Checksums do not match! File may be corrupted or tampered."
+    echo " ERROR: Checksums do not match! File may be corrupted or tampered."
     exit 1
 fi
 
 echo ""
-echo "=== Receive Complete ==="
+echo "File Received successfully"

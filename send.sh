@@ -3,7 +3,7 @@
 # send.sh
 # Alice uses this to encrypt and send a file to Bob
 
-echo "=== Secure File Send ==="
+echo "Secure file sending"
 
 # Check if user gave a filename
 if [ -z "$1" ]; then
@@ -56,5 +56,5 @@ echo "File sent to Bob successfully!"
 echo "$TIMESTAMP | alice | ssuk04@localhost | $1 | sha256:$CHECKSUM | SUCCESS" >> "$LOG"
 
 echo ""
-echo "=== Transfer Complete ==="
+echo " Transfer Completed successfully"
 echo "Log updated: $LOG"
