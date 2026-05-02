@@ -42,20 +42,20 @@ This tool fixes all three.
 - Folder Structure
 
 secure-share/
-├── setup_keys.sh     # run this first
-├── send.sh           # Alice runs this to send
-├── receive.sh        # Bob runs this to receive
-├── transfer.log      # auto-generated log
-├── README.md         # this file
-├── alice/            # Alice's workspace
+├── setup_keys.sh     - run this first
+├── send.sh           -Alice runs this to send
+├── receive.sh        -Bob runs this to receive
+├── transfer.log      - auto-generated log
+├── README.md         - this file
+├── alice/            -Alice's workspace
 │   ├── notes.txt
 │   └── bob-public.txt
-└── bob/              # Bob's workspace
+└── bob/              - Bob's workspace
 └── bob-key.txt
 
 
 
-## Setting Up
+-Setting Up
 
 First time only — run the setup script:
 
