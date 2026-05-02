@@ -5,3 +5,6 @@ alice/bob-public.txt
 transfer.log
 alice/alice-ssh-key
 alice/alice-ssh-key.pub
+bob/report.txt
+bob/photos.zip
+alice/photo1.txt
